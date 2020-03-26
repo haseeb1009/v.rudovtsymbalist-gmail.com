@@ -32,11 +32,11 @@ class NavBar extends React.Component {
                     <li style={{margin:'0 0 0 0'}} >Executive Team</li>
                     </Link>
                     <div style={{margin:'1vw 0 1vw 0'}}></div>
-                    <Link   to='/symposium'>
+                    <Link  to='/symposium'>
                     <li style={{margin:'0 0 0 0'}}>Global Symposium</li>
                     </Link>
                     <div style={{margin:'1vw 0 1vw 0'}}></div>
-                    <Link  s to='/winners'>
+                    <Link  to='/winners'>
                     <li style={{margin:'0 0 0 0'}}>Winners</li>
                     </Link>
                     <div style={{margin:'1vw 0 1vw 0'}}></div>
