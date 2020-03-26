@@ -50,8 +50,8 @@ const Main = () => {
     return (
         <main>
             <section id='banner'>
-                <container class='mct1'>
-                    <div class='mct2'>
+                <container className='mct1'>
+                    <div className='mct2'>
                         <img src={logo}></img>
                         <h1>CULTURE</h1>
                         <p>We unite business and education. And much more...</p>
