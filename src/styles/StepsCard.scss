@@ -1,27 +1,21 @@
 /* starting ENTER animation */
 .stepscardAnimation-enter {
-  position: absolute;
-  top: 0;
   opacity: 0.01;
-  transform: translateY(0%) scale(0.01);
 }
 
 /* ending ENTER animation */
 .stepscardAnimation-enter-active {
   opacity: 1;
-  transform: translateY(0%) scale(1);
-  transition: all 1000ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 /* starting EXIT animation */
 .stepstepscardAnimationscard-exit {
   opacity: 1;
-  // transform: scale(1.01);
 }
 
 /* ending EXIT animation */
 .stepscardAnimation-exit-active {
   opacity: 0;
-  // transform: scale(4);
-  transition: all 1000ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
