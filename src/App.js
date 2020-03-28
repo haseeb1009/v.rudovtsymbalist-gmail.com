@@ -11,6 +11,9 @@ import Team from './Scene/Team'
 import Blog from './Scene/Blog'
 import Winners from './Scene/Winners'
 import Coach from './Scene/Coach'
+import Admin from './Scene/Admin'
+import AdminDashboard from './Scene/AdminDashboard';
+
 
 function App() {
   return (
@@ -18,12 +21,16 @@ function App() {
       
         <NavBar title='volodymyr' />
         <Switch>
-          <Route path='/' exact render={(props) => <Main name='Volodymyr' />} />
+
+          <Route path='/' exact render={(props) => <Main/>} />
+          <Route path='/admin' exact component={Admin} />
+          <Route path='/AdminDashboard'exact component={AdminDashboard} />
           <Route path='/training' component={Training} />
           <Route path='/business' component={Business} />
           <Route path='/research' component={Research} />
           <Route path='/coach' component={Coach}/>
           <Route path='/team' component={Team} />
+          
           <Route path='/blog' component={Blog} />
           <Route path='/winners' component={Winners} />
         </Switch>

@@ -1,9 +1,12 @@
 import React from 'react'
-
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import '../styles/StepsCard.scss';
 const FragmentPlayer =(props)=> {
     return (
 
       <>
+      <TransitionGroup>
+            <CSSTransition key={props.p} timeout={300} classNames="stepscardAnimation">
       <iframe style={{  borderRadius: '25px',
       display: 'block',
       marginLeft: 'auto',
@@ -18,6 +21,8 @@ const FragmentPlayer =(props)=> {
        >
 
       </iframe>
+      </CSSTransition> 
+            </TransitionGroup>
       </>
     )
 

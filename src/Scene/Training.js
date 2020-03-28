@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HowItWorksCard from '../Components/Cards/HowItWorksCard';
 import AccordeonCard from '../Components/Cards/AccordeonCard'
 import StepsCard from '../Components/Cards/StepsCard'
-
+import $ from 'jquery'
 
 // DATA NEDED TO DISPLAY
 let shortlistInstructor = [
@@ -120,6 +120,8 @@ class Training extends React.Component {
         }
         this.colorSwitcher = this.colorSwitcher.bind(this);
     }
+
+
     colorSwitcher = (event) => {
 
         if (event.target.id === 'instructor') {
@@ -146,13 +148,13 @@ class Training extends React.Component {
                 borderInst: '1px solid black'
             })
         }
-        console.log(event.target.id)
+        
     }
     switcherInst = (event) => {
         this.setState({
             studButstat: 'nonactive',
             instButstat: 'active',
-            display: 'none',
+           
             idswitcher: 'number-two-instructor',
             h2width: [{ one: '31.85vw', two: '22.52vw', three: '16vw', four: '16vw' }],
             displayText: instructorText,
@@ -161,14 +163,16 @@ class Training extends React.Component {
             button: 'Show More Details',
             url:'https://www.youtube.com/embed/mOx2JtRTGgU'
         })
+        this.fadingSwitcher('instructor')
+        
         this.colorSwitcher(event)
     }
     switcherStud = (event) => {
         this.setState({
             studButstat: 'active',
             instButstat: 'nonactive',
-            display: 'flex',
             idswitcher: 'number-two',
+            display:'flex',
             h2width: [{ one: '11.83vw', two: '14.07vw', three: '31.85vw', four: '16vw' }],
             displayText: studentText,
             shortInstrcution: shortlistStudent,
@@ -176,10 +180,24 @@ class Training extends React.Component {
             button:'No More Details for Students',
             url:'https://www.youtube.com/embed/X6E_eK0FFkQ'
         })
-        console.log(this.state.h2width)
+         this.fadingSwitcher('student')
+        
         this.colorSwitcher(event)
     }
     
+    fadingSwitcher = (id)=>{
+        if (id==='student'){
+            
+            $('studentCard').css('display', 'block')
+            $('#studentCard').fadeIn(500)
+        }
+        else{
+            $('studentCard').css(')display', 'none')
+            
+            $('#studentCard').fadeOut(300)
+           
+        }
+    }
 
     render() {
         
@@ -194,10 +212,12 @@ class Training extends React.Component {
                 </div>
                 <FragmentPlayer width='1130px' height='636px' title='Training video' url={this.state.url} />
 
-                <div className='center' style={{ display: this.state.display }} >
+                
+                <div id='studentCard' className='center' >
                     <StudentCard margin='0 5.39vw 0 0' h2='Affiliated Students' p={affiliatedStudent} />
                     <StudentCard margin='0 0 0 5.39vw' h2='Unaffiliated Professionals'p={unAffiliatedProfessional} />
                 </div>
+            
 
                 <section className='centerList'>
 
